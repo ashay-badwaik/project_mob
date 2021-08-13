@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --maxWorker=50% --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.1.2",
+    "axios": "^0.21.1",
+    "graphql": "^15.5.1",
+    "jest": "^27.0.6",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
