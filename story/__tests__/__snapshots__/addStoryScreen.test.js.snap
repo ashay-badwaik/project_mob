@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<RCTScrollView>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#fdbb21",
+          "fontSize": 20,
+          "marginHorizontal": 30,
+          "marginVertical": 15,
+          "textAlign": "center",
+        }
+      }
+    >
+      Create your story
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignContent": "center",
+          "alignItems": "center",
+          "borderColor": "#fdbb21",
+          "borderRadius": 20,
+          "borderStyle": "dashed",
+          "borderWidth": 2,
+          "height": 200,
+          "justifyContent": "center",
+          "marginHorizontal": 30,
+          "marginVertical": 15,
+          "opacity": 1,
+        }
+      }
+      testID="image"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fdbb21",
+            "fontSize": 50,
+            "lineHeight": 50,
+            "marginHorizontal": 30,
+            "marginVertical": 15,
+            "textAlign": "center",
+          }
+        }
+        testID="addImg"
+      >
+        Tap here to add image
+      </Text>
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      onChangeText={[Function]}
+      placeholder="Add caption"
+      placeholderTextColor="#fdbb21"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "#fdbb21",
+          "borderRadius": 20,
+          "borderWidth": 2,
+          "color": "black",
+          "height": 100,
+          "justifyContent": "flex-start",
+          "marginHorizontal": 30,
+          "marginVertical": 15,
+          "textAlignVertical": "top",
+        }
+      }
+      testID="input"
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fdbb21",
+          "borderRadius": 20,
+          "height": 60,
+          "justifyContent": "center",
+          "marginHorizontal": 30,
+          "marginVertical": 15,
+          "opacity": 1,
+        }
+      }
+      testID="btn"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontSize": 30,
+            "lineHeight": 30,
+          }
+        }
+      >
+        Create Story
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;

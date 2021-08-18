@@ -11,12 +11,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-import { Text, View, Platform } from 'react-native';
+import { Text, View, Platform, LogBox } from 'react-native';
 
 import HomeScreen from './components/homeScreen';
 import StoryScreen from './components/storyScreen';
 import AddStoryScreen from './components/addStoryScreen';
 import ChangeProfilePic from './components/changeProfilePic';
+
+
 
 
 const baseUrl = Platform.OS === 'android' ? 'http://10.0.2.2:4000/':'http://localhost:4000/';
@@ -28,6 +30,8 @@ const client = new ApolloClient({
 
 const Stack = createNativeStackNavigator();
 
+
+LogBox.ignoreAllLogs();
 const App = () => {
   return (
 
@@ -35,7 +39,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Story" component={StoryScreen} />
+          <Stack.Screen name="Story" component={StoryScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="AddStory" component={AddStoryScreen} />
           <Stack.Screen name="ChangeProfilePic" component={ChangeProfilePic} />
         </Stack.Navigator>

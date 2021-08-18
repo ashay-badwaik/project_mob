@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "height": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#fdbb21",
+        "fontSize": 30,
+        "marginHorizontal": 30,
+        "marginVertical": 15,
+        "textAlign": "center",
+      }
+    }
+  >
+    Set Profile Pic
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderColor": "#fdbb21",
+        "borderRadius": 30,
+        "borderWidth": 2,
+        "height": 300,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginVertical": 15,
+        "width": 300,
+      }
+    }
+    testID="image"
+  >
+    <Image
+      source={
+        Object {
+          "uri": "./../images/no_profile_pic.jpeg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 30,
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+      testID="picture"
+    />
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fdbb21",
+        "borderRadius": 20,
+        "height": 60,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginVertical": 15,
+        "opacity": 1,
+        "width": 300,
+      }
+    }
+    testID="gallery"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 30,
+          "lineHeight": 30,
+        }
+      }
+    >
+      Pick from Gallery
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fdbb21",
+        "borderRadius": 20,
+        "height": 60,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginVertical": 15,
+        "opacity": 1,
+        "width": 300,
+      }
+    }
+    testID="camera"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 30,
+          "lineHeight": 30,
+        }
+      }
+    >
+      Take a photo
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fdbb21",
+        "borderRadius": 20,
+        "height": 60,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginVertical": 15,
+        "opacity": 1,
+        "width": 300,
+      }
+    }
+    testID="upload"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 30,
+          "lineHeight": 30,
+        }
+      }
+    >
+      Upload
+    </Text>
+  </View>
+</View>
+`;

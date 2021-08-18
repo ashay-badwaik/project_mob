@@ -1,22 +1,23 @@
+// @flow
+
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Image } from 'react-native';
-import {ProgressBar} from '@react-native-community/progress-bar-android';
+import { View, Text, Image } from 'react-native';
 import {styles} from './styles/storyScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Progress from 'react-native-progress';
 
+
 const StoryScreen = ({navigation}) => {
-    const [done,setDone] = useState(0.0);
+    const [done,setDone] = useState(0);
 
     const [path, setPath] = useState("");
     const [content, setContent] = useState("");
-
 
     useEffect(() => {
         getData();
 
         setTimeout(()=>{
-            navigation.navigate({name:'Home', params:{viewed: true}, merge:true});
+            navigation.navigate({name:'Home', params:{viewed: true}});
         }, 5000);
 
         setInterval(()=>{
@@ -30,36 +31,40 @@ const StoryScreen = ({navigation}) => {
     // }, [path, content])
 
     const getData = async () =>{
-        try {
-            await AsyncStorage.getItem("stories").then(value => {
-                if (value != null){
-                    value = JSON.parse(value);
-                    setPath(value.imagepath);
-                    setContent(value.content);
-                }
-            });
-        } catch(err) {
+        await AsyncStorage.getItem("stories").then(value => {
+            if (value != null){
+                value = JSON.parse(value);
+                setPath(value.imagepath);
+                setContent(value.content);
+                value.viewed = true;
+                // setStory(value);
+                // console.log('storyscreen: ',value);
+                
+                AsyncStorage.setItem("stories", JSON.stringify(value));
+            }
+        }).catch((err) => {
             console.log(err);
-        }
+        })
     }
-
-
+    
     return (  
-        
+
         <View style={styles.container}>
 
             <Progress.Bar 
+                testID='progress'
                 animated={true}
                 progress={done} 
                 width={300} 
                 color='#ffffff'
-                style={styles.progressBar}/>
+                style={styles.progressBar}
+            />
             
             <View style={styles.imgBox}>
-                <Image source={{uri: path}} style={styles.img}/>
+                <Image testID='img' source={{uri: path}} style={styles.img}/>
             </View>
 
-            <Text style={styles.caption}>{content}</Text>
+            <Text testID='content' style={styles.caption}>{content}</Text>
 
         </View>
     );

@@ -1,24 +1,25 @@
+// @flow
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, ImageBackground, Image, ScrollView } from 'react-native';
+import { Text, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
 import { styles } from './styles/addStoryScreen';
 import ImagePicker from 'react-native-image-crop-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const AddStoryScreen = ({ route, navigation }) => {
-    const {storiesAvailable} = route.params
+    const { storiesAvailable } = route.params
 
-    const [pic, setpic] = useState("");
+    const [pic, setpic] = useState("./../images/none.jpeg");
     const [content, setContent] = useState("");
     const [aspect, setAspect] = useState(1);
 
 
     const imageDisplay = () => {
-        if (pic === "") {
-            return (<Text style={styles.imagePickerText}>{"Tap here to add image"}</Text>);
+        if (pic === "./../images/none.jpeg") {
+            return (<Text style={styles.imagePickerText} testID='addImg'>{"Tap here to add image"}</Text>);
         }
         // console.log(pic)
-        return (<Image style={[styles.image, { aspectRatio: aspect }]} source={{ uri: pic }} />);
+        return (<Image style={[styles.image, { aspectRatio: aspect }]} source={{ uri: pic }} testID='display' />);
     }
 
     const pickImage = () => {
@@ -30,38 +31,38 @@ const AddStoryScreen = ({ route, navigation }) => {
             // includeExif: true,
             // mediaType: 'photo'
         }).then((image) => {
-            // console.log(image.path);
+            console.log(image.path);
             let aspectRatio = image.cropRect.width / image.cropRect.height;
             setAspect(aspectRatio);
-            // const path = './../images/pic1.jpeg';
-            // console.log(path)
             setpic(image.path);
+        }).catch((err) => {
+            console.log(err)
         })
     }
 
-    // const image = './../images/pic1.jpeg';
 
     const saveStory = async () => {
         try {
             const story = {
                 id: 1,
                 imagepath: pic,
-                content: content    
+                content: content,
+                viewed: false
             }
             await AsyncStorage.setItem('stories', JSON.stringify(story))
             // const res = await AsyncStorage.getItem('stories');
-            // console.log(res);
+            // console.log('res: ',res);
 
-            navigation.navigate({name:'Home', params:{available: true}, merge:true} )
+            navigation.navigate({ name: 'Home', params: { available: true } })
 
-            
-        }catch(err){
-            console.log(err);
+
+        } catch (err) {
+            console.log('addStoryScreen', err);
         }
     }
 
     const imageStyle = () => {
-        if (pic === "") {
+        if (pic === "./../images/none.jpeg") {
             return styles.imagePicker;
         }
         return styles.imageBox;
@@ -71,21 +72,20 @@ const AddStoryScreen = ({ route, navigation }) => {
         <ScrollView>
             <Text style={styles.headerText}>Create your story</Text>
 
-            <TouchableOpacity style={imageStyle()} onPress={pickImage}>
+            <TouchableOpacity style={imageStyle()} onPress={pickImage} testID='image'>
                 {imageDisplay()}
-                {/* <Image style= {styles.image} source={pic}/> */}
-                {/* <Text style={styles.imagePickerText}>{"Tap here to add image"}</Text> */}
             </TouchableOpacity>
 
-            <TextInput 
-                style={styles.input} 
-                multiline={true} 
-                placeholder="Add caption" 
-                placeholderTextColor="#fdbb21" 
-                onChangeText={(text)=>{setContent(text)}}
+            <TextInput
+                style={styles.input}
+                multiline={true}
+                placeholder="Add caption"
+                placeholderTextColor="#fdbb21"
+                onChangeText={(text) => { setContent(text) }}
+                testID='input'
             />
 
-            <TouchableOpacity style={styles.btn} onPress={saveStory}>
+            <TouchableOpacity style={styles.btn} onPress={saveStory} testID='btn'>
                 <Text style={styles.btnText}>Create Story</Text>
             </TouchableOpacity>
         </ScrollView>

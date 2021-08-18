@@ -2,11 +2,7 @@ import { StyleSheet } from 'react-native';
 
 
 export const styles = StyleSheet.create({
-    // decagon: {
-    //     // fill: "green",
-    //     stroke:'#000000',
-    //     strokeWidth:2.5
-    // },
+    
     container: {
         backgroundColor: '#ffffff',
         height: "100%"
@@ -27,7 +23,7 @@ export const styles = StyleSheet.create({
 
     shape: {
         // borderColor:'red', 
-        // // borderWidth:2,
+        // borderWidth:2,
         position: "absolute",
         alignItems: "center",
         justifyContent: "center",
@@ -36,9 +32,9 @@ export const styles = StyleSheet.create({
 
     stories: {
 
-        width: 170,
-        height: 170,
-        borderRadius: 85,
+        width: 300,
+        height: 300,
+        // borderRadius: 85,
         // borderColor: 'red',
         // borderWidth: 2,
         alignItems: "center",
@@ -47,21 +43,23 @@ export const styles = StyleSheet.create({
     },
 
     image: {
-        width: 170,
-        height: 170,
+        width: 280,
+        height: 280,
         // transform: [
         //     {translateX: 15},
         //     {translateY: 15}
         // ],
         alignContent: "center",
-        alignItems: "center",
-        borderRadius: 85
+        // alignItems: "center",
+        // borderColor: 'red',
+        // borderWidth: 2,
+        // borderRadius: 85
     },
 
     addBtn: {
         position: "absolute",
-        marginTop: 30,
-        marginLeft: 55,
+        marginTop: 55,
+        marginLeft: 90,
         height: 40,
         width: 40,
         backgroundColor: '#fdbb21',
@@ -86,21 +84,21 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         // borderWidth: 2,
         // borderColor: "red",
-        height: 150,
+        height: 300,
         
     },
 
     name: {
         
         textAlign: "center",
-        fontSize: 28,
+        fontSize: 40,
         // fontFamily: "Century Gothic",
         color: "#898989",
     },
 
     bio: {
         textAlign: "center",
-        fontSize: 20,
+        fontSize: 30,
         // fontFamily: "Century Gothic",
         color: "#898989",
     },

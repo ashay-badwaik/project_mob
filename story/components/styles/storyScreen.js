@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 30,
         width: 300,
         alignSelf: "center",
-        color: '#ffffff'
+        
     },
 
     imgBox: {

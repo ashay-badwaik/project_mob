@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 100,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 350,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="400"
+      bbWidth="400"
+      focusable={false}
+      height="400"
+      meetOrSlice={0}
+      minX={-800}
+      minY={-800}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "position": "absolute",
+          },
+          Object {
+            "flex": 0,
+            "height": 400,
+            "width": 400,
+          },
+        ]
+      }
+      vbHeight={1600}
+      vbWidth={1600}
+      width="400"
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="m754,0 L610,443.19 L233,717.1 L-233,717.1       -610,443.19 -754,0 -610,-443.19       -233,-717.1 233,-717.1       610,-443.19       z"
+          fill={null}
+          propList={
+            Array [
+              "fill",
+              "stroke",
+              "strokeWidth",
+            ]
+          }
+          stroke={0}
+          strokeWidth="30"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNCMaskedView>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="300"
+          bbWidth="300"
+          focusable={false}
+          height="300"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              Object {
+                "flex": 0,
+                "height": 300,
+                "width": 300,
+              },
+            ]
+          }
+          vbHeight={280}
+          vbWidth={300}
+          width="300"
+        >
+          <RNSVGGroup>
+            <RNSVGGroup
+              fill={4279918340}
+              matrix={
+                Array [
+                  0.1,
+                  0,
+                  0,
+                  -0.1,
+                  0,
+                  280,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                  "stroke",
+                ]
+              }
+              stroke={null}
+            >
+              <RNSVGPath
+                d="M1011 2703 c-94 -68 -255 -185 -318 -232 -85 -63 -195 -143 -270 -196 l-61 -44 -52 -163 c-29 -90 -60 -185 -71 -212 -10 -27 -19 -55 -19 -62 0 -8 -4 -22 -9 -32 -5 -9 -34 -94 -64 -189 l-54 -172 54 -168 c30 -92 58 -177 62 -188 5 -11 22 -63 39 -115 111 -353 115 -361 141 -378 14 -9 56 -39 93 -67 37 -27 95 -70 129 -95 35 -25 85 -61 111 -80 26 -19 81 -59 120 -88 40 -28 107 -77 148 -107 l75 -55 436 0 435 0 55 40 c30 21 69 49 87 62 18 13 54 39 80 58 26 20 79 58 117 85 39 27 75 54 81 60 6 5 46 35 88 65 43 30 105 75 138 100 68 51 43 -8 207 500 46 140 92 281 102 312 20 58 20 58 1 115 -11 32 -41 126 -67 208 -26 83 -51 159 -55 170 -5 11 -35 103 -67 205 l-59 185 -50 38 c-27 21 -83 62 -124 92 -41 30 -133 98 -205 150 -131 97 -146 108 -265 190 l-65 45 -436 0 -436 0 -52 -37z"
+                propList={
+                  Array [
+                    "strokeWidth",
+                  ]
+                }
+                strokeWidth="20"
+              />
+            </RNSVGGroup>
+            <RNSVGGroup
+              fill={4294967295}
+              matrix={
+                Array [
+                  0.1,
+                  0,
+                  0,
+                  -0.1,
+                  0,
+                  280,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                  "stroke",
+                ]
+              }
+              stroke={null}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "height": 300,
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": 300,
+          }
+        }
+        testID="image"
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../images/no_profile_pic.jpeg",
+            }
+          }
+          style={
+            Object {
+              "alignContent": "center",
+              "height": 280,
+              "width": 280,
+            }
+          }
+        />
+      </View>
+    </RNCMaskedView>
+    <View
+      style={
+        Object {
+          "position": "absolute",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fdbb21",
+            "borderRadius": 20,
+            "fontSize": 30,
+            "height": 40,
+            "justifyContent": "center",
+            "marginLeft": 90,
+            "marginTop": 55,
+            "opacity": 1,
+            "position": "absolute",
+            "width": 40,
+          }
+        }
+        testID="addBtn"
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 50,
+              "lineHeight": 50,
+              "margin": 0,
+              "padding": 0,
+              "textAlign": "center",
+            }
+          }
+        >
+          +
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 300,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#898989",
+          "fontSize": 40,
+          "textAlign": "center",
+        }
+      }
+      testID="nameDisplay"
+    >
+      loading
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#898989",
+          "fontSize": 30,
+          "textAlign": "center",
+        }
+      }
+      testID="bioDisplay"
+    >
+      loading
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;
