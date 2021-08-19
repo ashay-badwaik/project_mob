@@ -1,17 +1,25 @@
 // @flow
-import React, { useState } from 'react';
+import * as React from 'react';
 import { Text, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
 import { styles } from './styles/addStoryScreen';
 import ImagePicker from 'react-native-image-crop-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { StackNavigationProp } from '@react-navigation/stack';
+// import RootStackParamList from './../App';
 
 
-const AddStoryScreen = ({ route, navigation }) => {
-    const { storiesAvailable } = route.params
 
-    const [pic, setpic] = useState("./../images/none.jpeg");
-    const [content, setContent] = useState("");
-    const [aspect, setAspect] = useState(1);
+type Props = {
+    // navigation: StackNavigationProp<RootStackParamList, 'AddStoryScreen'>;
+    navigation: any
+};
+
+
+const AddStoryScreen = ({ navigation }: Props): React.Node => {
+
+    const [pic, setpic] = React.useState("./../images/none.jpeg");
+    const [content, setContent] = React.useState("");
+    const [aspect, setAspect] = React.useState(1);
 
 
     const imageDisplay = () => {
@@ -53,7 +61,7 @@ const AddStoryScreen = ({ route, navigation }) => {
             // const res = await AsyncStorage.getItem('stories');
             // console.log('res: ',res);
 
-            navigation.navigate({ name: 'Home', params: { available: true } })
+            navigation.navigate({ name: 'HomeScreen', params: { available: true } })
 
 
         } catch (err) {

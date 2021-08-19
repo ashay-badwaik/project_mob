@@ -1,23 +1,26 @@
 // @flow
 
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import {styles} from './styles/storyScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Progress from 'react-native-progress';
 
+type Props = {
+    navigation: any
+}
 
-const StoryScreen = ({navigation}) => {
-    const [done,setDone] = useState(0);
+const StoryScreen = ({navigation}: Props): React.Node => {
+    const [done,setDone] = React.useState(0);
 
-    const [path, setPath] = useState("");
-    const [content, setContent] = useState("");
+    const [path, setPath] = React.useState("");
+    const [content, setContent] = React.useState("");
 
-    useEffect(() => {
+    React.useEffect(() => {
         getData();
 
         setTimeout(()=>{
-            navigation.navigate({name:'Home', params:{viewed: true}});
+            navigation.navigate({name:'HomeScreen', params:{viewed: true}});
         }, 5000);
 
         setInterval(()=>{

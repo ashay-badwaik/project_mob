@@ -1,28 +1,30 @@
 // @flow
 
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import { useQuery } from '@apollo/client';
 import { View, Text, TouchableOpacity, SafeAreaView, Image, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Svg, { Polygon, G, Path } from 'react-native-svg';
+import Svg, { G, Path } from 'react-native-svg';
 import { styles } from './styles/homeScreen';
 import { USER_DETAILS } from "../graphql/query";
-import { useFocusEffect } from '@react-navigation/native';
 import MaskedView from '@react-native-masked-view/masked-view';
 
+type Props = {
+    navigation: any;
+    route: any
+}
 
-
-const HomeScreen = ({ navigation, route }) => {
+const HomeScreen = ({ navigation, route }: Props): React.Node => {
 
     // const id = Platform.OS === 'android' ? 1 : 2;
 
     const { loading, error, data } = useQuery(USER_DETAILS, { variables: { id: 1 } });
 
-    const [uploaded, setUploaded] = useState(false);
+    const [uploaded, setUploaded] = React.useState(false);
 
-    const [viewed, setViewed] = useState(false);
+    const [viewed, setViewed] = React.useState(false);
 
-    const [path, setPath] = useState("")
+    const [path, setPath] = React.useState("")
 
     // useFocusEffect(
     //     useCallback(() => {
@@ -30,7 +32,7 @@ const HomeScreen = ({ navigation, route }) => {
     //     })
     // )
 
-    useEffect(() => {
+    React.useEffect(() => {
         // console.log(loading, error, data);
         if (data) {
             setPath(data.getUserDetails.image_path)
@@ -38,8 +40,8 @@ const HomeScreen = ({ navigation, route }) => {
 
     }, [loading, error, data])
 
-    useEffect(async () => {
-        await AsyncStorage.getItem('stories').then((value) => {
+    React.useEffect( () => {
+        AsyncStorage.getItem('stories').then((value) => {
             if (value != null) {
                 setUploaded(true);
                 value = JSON.parse(value);
@@ -184,7 +186,7 @@ const HomeScreen = ({ navigation, route }) => {
                 >
                     <TouchableOpacity
                         style={styles.stories}
-                        onPress={() => navigation.navigate("Story")}
+                        onPress={() => navigation.navigate("StoryScreen")}
                         onLongPress={() => navigation.navigate({ name: "ChangeProfilePic", params: { imagePath: path } })}
                         testID='image'
                     >
@@ -195,7 +197,7 @@ const HomeScreen = ({ navigation, route }) => {
                 <View style={{ position: "absolute" }} >
                     <TouchableOpacity
                         style={styles.addBtn}
-                        onPress={() => navigation.navigate({ name: "AddStory", params: { storiesAvailable: uploaded } })}
+                        onPress={() => navigation.navigate({ name: "AddStoryScreen" })}
                         testID='addBtn'
                     >
                         <Text style={styles.btnText}>+</Text>

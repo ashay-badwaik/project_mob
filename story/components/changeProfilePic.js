@@ -1,14 +1,18 @@
 // @flow
 
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, Platform } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import { useMutation } from '@apollo/client';
 import { UPLOAD_IMAGE_PATH } from './../graphql/mutation';
 import { styles } from './styles/ChnageProfilePic';
 
+type Props = {
+    navigation: any;
+    route: any
+}
 
-const ChangeProfilePic = ({ route, navigation }) => {
+const ChangeProfilePic = ({ route, navigation }: Props): React.Node => {
 
     const {imagePath} = route.params;
 
@@ -16,7 +20,7 @@ const ChangeProfilePic = ({ route, navigation }) => {
 
     const id = Platform.OS === 'android' ? 1 : 2;
 
-    const [path, setPath] = useState(imagePath);
+    const [path, setPath] = React.useState(imagePath);
 
     // useEffect(()=>{
     //     console.log(path);
@@ -71,7 +75,7 @@ const ChangeProfilePic = ({ route, navigation }) => {
         uploadPath({
             variables: {id: id, path: path}
         })
-        navigation.navigate({name:'Home', params:{path: path}});
+        navigation.navigate({name:'HomeScreen'});
     }
 
     return (
