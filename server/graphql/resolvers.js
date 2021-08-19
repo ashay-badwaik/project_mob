@@ -13,7 +13,17 @@ const Query = {
         try {
             let data = await connection.promise().query(QUERY);
             // console.log(data[0]);
-            return data[0];
+            const results = [];
+
+            for (let i=0; i<data.length; i++){
+                results.push({
+                    id: data[0][i].id,
+                    name: data[0][i].name,
+                    bio: data[0][i].bio,
+                    imagePath: data[0][i].image_path
+                })
+            }
+            return results;
         } catch (err) {
             console.log(err);
         }
@@ -28,7 +38,13 @@ const Query = {
         try {
             let data = await connection.promise().query(QUERY);
             // console.log(data[0][0]);
-            return data[0][0];
+            const obj = {
+                id: data[0][0].id,
+                name: data[0][0].name,
+                bio: data[0][0].bio,
+                imagePath: data[0][0].image_path
+            }
+            return obj;
         } catch (err) {
             console.log(err);
         }

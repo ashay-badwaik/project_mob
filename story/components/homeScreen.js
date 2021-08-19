@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
     React.useEffect(() => {
         // console.log(loading, error, data);
         if (data) {
-            setPath(data.getUserDetails.image_path)
+            setPath(data.getUserDetails.imagePath)
         }
 
     }, [loading, error, data])

@@ -6,7 +6,7 @@ const typeDefs = gql`
         id: ID!
         name: String
         bio: String
-        image_path: String
+        imagePath: String
     }
 
 

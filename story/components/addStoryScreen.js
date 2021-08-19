@@ -5,9 +5,13 @@ import { styles } from './styles/addStoryScreen';
 import ImagePicker from 'react-native-image-crop-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackNavigationProp } from '@react-navigation/stack';
-// import RootStackParamList from './../App';
 
-
+type RootStackParamList = {
+    HomeScreen: { available?: bool, viewed?: bool };
+    StoryScreen: null;
+    AddStoryScreen: null;
+    ChangeProfilePic: { imagePath: string }
+  };
 
 type Props = {
     // navigation: StackNavigationProp<RootStackParamList, 'AddStoryScreen'>;

@@ -5,7 +5,7 @@ export const USER_DETAILS = gql`
         getUserDetails(id:$id){
             name
             bio
-            image_path
+            imagePath
         }
     }
 `
