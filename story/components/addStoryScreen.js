@@ -39,7 +39,6 @@ const AddStoryScreen = ({ navigation }: Props): React.Node => {
     })
   }
 
-
   const saveStory = async () => {
     try {
       const story = {
@@ -51,10 +50,7 @@ const AddStoryScreen = ({ navigation }: Props): React.Node => {
       await AsyncStorage.setItem('stories', JSON.stringify(story))
       // const res = await AsyncStorage.getItem('stories');
       // console.log('res: ',res);
-
       navigation.navigate({ name: 'HomeScreen', params: { available: true } })
-
-
     } catch (err) {
       console.log('addStoryScreen', err);
     }
