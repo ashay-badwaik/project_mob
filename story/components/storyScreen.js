@@ -11,6 +11,10 @@ type Props = {
   navigation: any
 }
 
+/**
+ * Screen to display the story
+ * @param {Props} props 
+ */
 const StoryScreen = ({ navigation }: Props): React.Node => {
   const [done, setDone] = React.useState(0);
 
@@ -29,11 +33,9 @@ const StoryScreen = ({ navigation }: Props): React.Node => {
     }, 100)
   }, []);
 
-  // useEffect(()=>{
-  //     console.log('image:  ',path);
-  //     console.log('content: ',content);
-  // }, [path, content])
-
+  /**
+   * retrive the story data for AsyncStorage
+   */
   const getData = async () => {
     await AsyncStorage.getItem("stories").then(value => {
       if (value != null) {
@@ -41,9 +43,6 @@ const StoryScreen = ({ navigation }: Props): React.Node => {
         setPath(value.imagepath);
         setContent(value.content);
         value.viewed = true;
-        // setStory(value);
-        // console.log('storyscreen: ',value);
-
         AsyncStorage.setItem("stories", JSON.stringify(value));
       }
     }).catch((err) => {

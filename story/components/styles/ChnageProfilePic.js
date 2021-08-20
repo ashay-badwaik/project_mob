@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     height: "100%",
     alignItems: "center"
-    // alignContent: "center",
   },
 
   header: {
@@ -26,7 +25,6 @@ export const styles = StyleSheet.create({
     borderColor: '#fdbb21',
     borderWidth: 2,
     borderRadius: 30,
-    // aspectRatio: 1,
   },
 
   img: {

@@ -15,6 +15,10 @@ type Props = {
   route: any
 }
 
+/**
+ * Home screen for the app
+ * @param {Props} props
+ */
 const HomeScreen = ({ navigation, route }: Props): React.Node => {
 
   const id = Platform.OS === 'android' ? 1 : 2;
@@ -28,7 +32,6 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
   const [path, setPath] = React.useState("")
 
   React.useEffect(() => {
-    // console.log(loading, error, data);
     if (data) {
       setPath(data.getUserDetails.imagePath)
     }
@@ -39,7 +42,6 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
       if (value != null) {
         setUploaded(true);
         value = JSON.parse(value);
-        // console.log('home: ',value);
         setViewed(value.viewed);
       }
     }).catch((err) => {
@@ -47,6 +49,9 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
     })
   }, [uploaded, viewed, route.params?.available, route.params?.viewed]);
 
+  /**
+   * styles color of the display pic border based on story available or viewed.
+   */
   const decagon = () => {
     if (uploaded === true && viewed === false) {
       return "#fdbb21";
@@ -56,8 +61,10 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
     return "transparent";
   }
 
+  /**
+   * displays the name of user on the screen if available
+   */
   const nameDisplay = () => {
-    // console.log('data:', data);
     if (loading) {
       return "loading";
     }
@@ -70,6 +77,9 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
     return data.getUserDetails.name;
   }
 
+  /**
+   * displays the bio of user on screen if avaialable
+   */
   const bioDisplay = () => {
     if (loading) {
       return "loading";
@@ -83,6 +93,9 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
     return data.getUserDetails.bio;
   }
 
+  /**
+   * displays the profile pic of user
+   */
   const imageDisplay = () => {
     if (loading) {
       return (<Image source={require('./../images/no_profile_pic.jpeg')} style={styles.image} />)
@@ -91,8 +104,6 @@ const HomeScreen = ({ navigation, route }: Props): React.Node => {
       console.log(error);
       return (<Image source={require('./../images/no_profile_pic.jpeg')} style={styles.image} />)
     }
-    // const path = data.getUserDetails.image_path;
-    // console.log('path:', path);
     return (<Image source={{ uri: path }} style={styles.image} />)
   }
 

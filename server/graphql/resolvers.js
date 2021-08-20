@@ -4,6 +4,9 @@ const connection = require("./connection");
 
 
 const Query = {
+  /**
+   * get all users details
+   */
   getAllUserDetails: async () => {
     let QUERY = `
       SELECT id, name, bio, image_path 
@@ -29,6 +32,9 @@ const Query = {
     }
   },
 
+  /**
+   * get user's details based on id
+   */
   getUserDetails: async (_, { id }) => {
     let QUERY = `
       SELECT id, name, bio, image_path 
@@ -53,6 +59,9 @@ const Query = {
 
 
 const Mutation = {
+  /**
+   * add a user to database
+   */
   addUser: async (_, { name, bio }) => {
     let QUERY = `
       INSERT INTO users (name, bio) 
@@ -82,6 +91,9 @@ const Mutation = {
     }
   },
 
+  /**
+   * upload a path of image to database
+   */
   uploadPath: async (_, { id, path }) => {
     let QUERY = `
       UPDATE users 

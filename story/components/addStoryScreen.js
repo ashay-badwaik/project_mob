@@ -10,21 +10,29 @@ type Props = {
   navigation: any;
 }
 
+/**
+ * Screen to add a story
+ * @param {Props} props 
+ */
 const AddStoryScreen = ({ navigation }: Props): React.Node => {
 
   const [pic, setpic] = React.useState("./../images/none.jpeg");
   const [content, setContent] = React.useState("");
   const [aspect, setAspect] = React.useState(1);
 
-
+  /**
+   * Displays the add image text and the image(if selected)
+   */
   const imageDisplay = () => {
     if (pic === "./../images/none.jpeg") {
       return (<Text style={styles.imagePickerText} testID='addImg'>{"Tap here to add image"}</Text>);
     }
-    // console.log(pic)
     return (<Image style={[styles.image, { aspectRatio: aspect }]} source={{ uri: pic }} testID='display' />);
   }
 
+  /**
+   * onPress function to pick image from device image library
+   */
   const pickImage = () => {
     ImagePicker.openPicker({
       cropping: true,
@@ -39,6 +47,9 @@ const AddStoryScreen = ({ navigation }: Props): React.Node => {
     })
   }
 
+  /**
+   * onPress function, saves the imagePath and content in AsyncStorage
+   */
   const saveStory = async () => {
     try {
       const story = {
@@ -48,14 +59,15 @@ const AddStoryScreen = ({ navigation }: Props): React.Node => {
         viewed: false
       }
       await AsyncStorage.setItem('stories', JSON.stringify(story))
-      // const res = await AsyncStorage.getItem('stories');
-      // console.log('res: ',res);
       navigation.navigate({ name: 'HomeScreen', params: { available: true } })
     } catch (err) {
       console.log('addStoryScreen', err);
     }
   }
 
+  /**
+   * styling based on image or text displayed
+   */
   const imageStyle = () => {
     if (pic === "./../images/none.jpeg") {
       return styles.imagePicker;

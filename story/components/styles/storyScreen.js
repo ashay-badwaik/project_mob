@@ -16,12 +16,9 @@ export const styles = StyleSheet.create({
   imgBox: {
     marginHorizontal: 30,
     marginVertical: 40,
-    // width: 300,
     height: 300,
     alignItems: "center",
     justifyContent: "center",
-    // borderColor: '#fdbb21',
-    // borderWidth: 2,
     borderRadius: 30,
   },
 
